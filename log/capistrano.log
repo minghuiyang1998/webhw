@@ -784,3 +784,133 @@
   INFO [b5fae142] Running /usr/bin/env echo "Branch master (at 0406e7ad7cb227f01af41162cff8eaa2d4ba5088) deployed as release 20190513145832 by yangminghui" >> /var/www/webhw/revisions.log as root@118.25.152.188
  DEBUG [b5fae142] Command: cd /var/www/webhw/releases && /usr/bin/env echo "Branch master (at 0406e7ad7cb227f01af41162cff8eaa2d4ba5088) deployed as release 20190513145832 by yangminghui" >> /var/www/webhw/revisions.log
   INFO [c206e180] Finished in 0.457 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-05-13 23:24:50 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8d4d51b3] Running /usr/bin/env mkdir -p /tmp as root@118.25.152.188
+ DEBUG [8d4d51b3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c84fe971] Finished in 0.763 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 100.0%
+  INFO [c386abfb] Running /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh as root@118.25.152.188
+ DEBUG [c386abfb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh
+  INFO [1a541ef3] Finished in 0.470 seconds with exit status 0 (successful).
+  INFO [1ba908dc] Running /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD as root@118.25.152.188
+ DEBUG [1ba908dc] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD )
+ DEBUG [ac275851] 	d43b47a4cce8a4a445f92016bf9254b1445cf4a3	HEAD
+  INFO [ac275851] Finished in 4.739 seconds with exit status 0 (successful).
+  INFO [f70dc07e] Running /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases as root@118.25.152.188
+ DEBUG [f70dc07e] Command: /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases
+  INFO [0afd79e0] Finished in 0.336 seconds with exit status 0 (successful).
+ DEBUG [edea5122] Running [ -f /var/www/webhw/current/REVISION ] as root@118.25.152.188
+ DEBUG [edea5122] Command: [ -f /var/www/webhw/current/REVISION ]
+ DEBUG [5d61b981] Finished in 0.399 seconds with exit status 0 (successful).
+ DEBUG [1ce4339d] Running /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null as root@118.25.152.188
+ DEBUG [1ce4339d] Command: /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null
+ DEBUG [91f6c75e] 	0406e7ad7cb227f01af41162cff8eaa2d4ba5088
+ DEBUG [91f6c75e] Finished in 0.488 seconds with exit status 0 (successful).
+ DEBUG [2cde9979] Running [ -f /var/www/webhw/repo/HEAD ] as root@118.25.152.188
+ DEBUG [2cde9979] Command: [ -f /var/www/webhw/repo/HEAD ]
+ DEBUG [5cd26001] Finished in 0.408 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/webhw/repo
+ DEBUG [abb40be7] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [abb40be7] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [228d2eab] Finished in 0.382 seconds with exit status 0 (successful).
+  INFO [dd64c4d8] Running /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git as root@118.25.152.188
+ DEBUG [dd64c4d8] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git )
+  INFO [0b18d934] Finished in 0.381 seconds with exit status 0 (successful).
+  INFO [62c484a8] Running /usr/bin/env git remote update --prune as root@118.25.152.188
+ DEBUG [62c484a8] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [18f2cc26] 	正在获取 origin
+ DEBUG [18f2cc26] 	来自 github.com:minghuiyang1998/webhw
+   0406e7a..d43b47a  master     -> master
+  INFO [18f2cc26] Finished in 5.440 seconds with exit status 0 (successful).
+ DEBUG [577f8500] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [577f8500] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [56550488] Finished in 0.398 seconds with exit status 0 (successful).
+  INFO [d13b35c9] Running /usr/bin/env mkdir -p /var/www/webhw/releases/20190513152457 as root@118.25.152.188
+ DEBUG [d13b35c9] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env mkdir -p /var/www/webhw/releases/20190513152457 )
+  INFO [51c34d44] Finished in 0.478 seconds with exit status 0 (successful).
+  INFO [2e2bbd96] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190513152457 as root@118.25.152.188
+ DEBUG [2e2bbd96] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190513152457 )
+  INFO [11b40455] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [18cc7dc2] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [18cc7dc2] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [6440b83b] Finished in 0.508 seconds with exit status 0 (successful).
+ DEBUG [abbd7591] Running /usr/bin/env git rev-list --max-count=1 master as root@118.25.152.188
+ DEBUG [abbd7591] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [2dc6da61] 	d43b47a4cce8a4a445f92016bf9254b1445cf4a3
+ DEBUG [2dc6da61] Finished in 0.418 seconds with exit status 0 (successful).
+ DEBUG [f964b0c8] Running if test ! -d /var/www/webhw/releases/20190513152457; then echo "Directory does not exist '/var/www/webhw/releases/20190513152457'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [f964b0c8] Command: if test ! -d /var/www/webhw/releases/20190513152457; then echo "Directory does not exist '/var/www/webhw/releases/20190513152457'" 1>&2; false; fi
+ DEBUG [5190d81f] Finished in 0.409 seconds with exit status 0 (successful).
+  INFO [915fc2be] Running /usr/bin/env echo "d43b47a4cce8a4a445f92016bf9254b1445cf4a3" > REVISION as root@118.25.152.188
+ DEBUG [915fc2be] Command: cd /var/www/webhw/releases/20190513152457 && /usr/bin/env echo "d43b47a4cce8a4a445f92016bf9254b1445cf4a3" > REVISION
+  INFO [21edec1b] Finished in 0.413 seconds with exit status 0 (successful).
+ DEBUG [92da04a9] Running if test ! -d /var/www/webhw/releases/20190513152457; then echo "Directory does not exist '/var/www/webhw/releases/20190513152457'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [92da04a9] Command: if test ! -d /var/www/webhw/releases/20190513152457; then echo "Directory does not exist '/var/www/webhw/releases/20190513152457'" 1>&2; false; fi
+ DEBUG [d8aed27e] Finished in 0.515 seconds with exit status 0 (successful).
+  INFO [584ba796] Running /usr/bin/env npm install --production --silent --no-progress as root@118.25.152.188
+ DEBUG [584ba796] Command: cd /var/www/webhw/releases/20190513152457 && /usr/bin/env npm install --production --silent --no-progress
+ DEBUG [ed6b56c1] 	added 69 packages in 1.449s
+  INFO [ed6b56c1] Finished in 2.354 seconds with exit status 0 (successful).
+  INFO [949f6eb3] Running /usr/bin/env ln -s /var/www/webhw/releases/20190513152457 /var/www/webhw/releases/current as root@118.25.152.188
+ DEBUG [949f6eb3] Command: /usr/bin/env ln -s /var/www/webhw/releases/20190513152457 /var/www/webhw/releases/current
+  INFO [289e6b1e] Finished in 0.403 seconds with exit status 0 (successful).
+  INFO [be44edba] Running /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw as root@118.25.152.188
+ DEBUG [be44edba] Command: /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw
+  INFO [6f94d515] Finished in 0.374 seconds with exit status 0 (successful).
+ DEBUG [f72b849a] Running if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [f72b849a] Command: if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi
+ DEBUG [741c2044] Finished in 0.437 seconds with exit status 0 (successful).
+ DEBUG [1cb0e5f8] Running /usr/bin/env pm2 jlist  as root@118.25.152.188
+ DEBUG [1cb0e5f8] Command: cd /var/www/webhw/current && /usr/bin/env pm2 jlist 
+ DEBUG [826be1d0] 	[{"pid":22725,"name":"webhw","pm2_env":{"script":"/var/www/webhw/current/bin/www","prev_restart_delay":0,"exit_code":1,"node_version":"8.1.0","versioning":null,"version":"0.0.0","unstable_restarts":0,"restart_time":18,"pm_id":0,"created_at":1557759526744,"axm_dynamic":{},"axm_options":{"error":true,"heapdump":false,"feature.profiler.heap_snapshot":false,"feature.profiler.heap_sampling":false,"feature.profiler.cpu_js":false,"latency":true,"catchExceptions":true,"profiling":true,"metrics":{"http":true,"runtime":true,"eventLoop":true,"network":false,"v8":true},"standalone":false,"tracing":{"outbound":false,"enabled":false},"module_conf":{},"apm":{"version":"4.2.0","type":"node"},"module_name":"webhw","module_version":"3.5.0"},"axm_monitor":{"Heap Size":{"value":"15.50","type":"internal/v8/heap/total","unit":"MiB","historic":true},"Heap Usage":{"value":82.64,"type":"internal/v8/heap/usage","unit":"%","historic":true},"Used Heap Size":{"value":"12.81","type":"internal/v8/heap/used","unit":"MiB","historic":true},"Active requests":{"value":0,"type":"internal/libuv/requests","historic":true},"Active handles":{"value":4,"type":"internal/libuv/handles","historic":true},"Event Loop Latency":{"value":"0.52","type":"internal/libuv/latency/p50","unit":"ms","historic":true},"Event Loop Latency p95":{"value":"1.47","type":"internal/libuv/latency/p95","unit":"ms","historic":true},"HTTP Mean Latency":{"value":2.5,"type":"internal/http/builtin/latency/p50","unit":"ms","historic":true},"HTTP P95 Latency":{"value":19,"type":"internal/http/builtin/latency/p95","unit":"ms","historic":true},"HTTP":{"value":0,"type":"internal/http/builtin/reqs","unit":"req/min","historic":true}},"axm_actions":[],"pm_uptime":1557759620620,"status":"online","unique_id":"65243042-f02a-4f77-964c-335e0c1a4f53","webhw":"{}","PM2_HOME":"/root/.pm2","XDG_SESSION_ID":"55","COMP_WORDBREAKS":" \t\n\"'><;|&(:","NVM_CD_FLAGS":"","SHELL":"/bin/bash","HISTSIZE":"3000","SSH_CLIENT":"58.41.205.174 63968 22","OLDPWD":"/root","NVM_DIR":"/root/.nvm","USER":"root","SSH_AUTH_SOCK":"/tmp/ssh-50Biem5sAF/agent.16317","MAIL":"/var/mail/root","PATH":"/root/.nvm/versions/node/v8.1.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin","PWD":"/var/www/webhw/current","LANG":"zh_CN.UTF-8","SHLVL":"1","HOME":"/root","LOGNAME":"root","CVS_RSH":"ssh","SSH_CONNECTION":"58.41.205.174 63968 172.17.0.6 22","LC_CTYPE":"zh_CN.UTF-8","NVM_BIN":"/root/.nvm/versions/node/v8.1.0/bin","LESSOPEN":"||/usr/bin/lesspipe.sh %s","PROMPT_COMMAND":"history -a; ","XDG_RUNTIME_DIR":"/run/user/0","HISTTIMEFORMAT":"%F %T ","_":"/usr/bin/env","PM2_USAGE":"CLI","PM2_JSON_PROCESSING":"true","NODE_APP_INSTANCE":0,"vizion_running":false,"km_link":false,"pm_pid_path":"/root/.pm2/pids/webhw-0.pid","pm_err_log_path":"/root/.pm2/logs/webhw-error.log","pm_out_log_path":"/root/.pm2/logs/webhw-out.log","exec_mode":"fork_mode","instances":1,"exec_interpreter":"node","pm_cwd":"/var/www/webhw/releases/20190513144927","pm_exec_path":"/var/www/webhw/current/bin/www","node_args":[],"name":"webhw","env":{"updateEnv":true,"unique_id":"65243042-f02a-4f77-964c-335e0c1a4f53","webhw":"{}","PM2_HOME":"/root/.pm2","XDG_SESSION_ID":"55","COMP_WORDBREAKS":" \t\n\"'><;|&(:","NVM_CD_FLAGS":"","SHELL":"/bin/bash","HISTSIZE":"3000","SSH_CLIENT":"58.41.205.174 63968 22","OLDPWD":"/root","NVM_DIR":"/root/.nvm","USER":"root","SSH_AUTH_SOCK":"/tmp/ssh-50Biem5sAF/agent.16317","MAIL":"/var/mail/root","PATH":"/root/.nvm/versions/node/v8.1.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin","PWD":"/var/www/webhw/current","LANG":"zh_CN.UTF-8","SHLVL":"1","HOME":"/root","LOGNAME":"root","CVS_RSH":"ssh","SSH_CONNECTION":"58.41.205.174 63968 172.17.0.6 22","LC_CTYPE":"zh_CN.UTF-8","NVM_BIN":"/root/.nvm/versions/node/v8.1.0/bin","LESSOPEN":"||/usr/bin/lesspipe.sh %s","PROMPT_COMMAND":"history -a; ","XDG_RUNTIME_DIR":"/run/user/0","HISTTIMEFORMAT":"%F %T ","_":"/usr/bin/env","PM2_USAGE":"CLI","PM2_JSON_PROCESSING":"true"},"merge_logs":true,"vizion":true,"autorestart":true,"instance_var":"NODE_APP_INSTANCE","pmx":true,"automation":true,"treekill":true,"username":"root","windowsHide":true,"kill_retry_time":100,"updateEnv":true},"pm_id":0,"monit":{"memory":33988608,"cpu":0.1}}]
+ DEBUG [826be1d0] Finished in 0.662 seconds with exit status 0 (successful).
+  INFO App is online
+ DEBUG [5199f623] Running if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [5199f623] Command: if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi
+ DEBUG [934c17e9] Finished in 0.460 seconds with exit status 0 (successful).
+  INFO [c1f208ee] Running /usr/bin/env pm2 restart ecosystem.config.js  as root@118.25.152.188
+ DEBUG [c1f208ee] Command: cd /var/www/webhw/current && /usr/bin/env pm2 restart ecosystem.config.js 
+ DEBUG [4b7d9575] 	[PM2] Applying action restartProcessId on app [webhw](ids: 0)
+ DEBUG [4b7d9575] 	[PM2] [webhw](0) ✓
+ DEBUG [4b7d9575] 	┌──────────┬────┬─────────┬──────┬───────┬────────┬─────────┬────────┬─────┬───────────┬──────┬──────────┐
+│ App name │ id │ version │ mode │ pid   │ status │ restart │ uptime │ cpu │ mem       │ user │ watching │
+├──────────┼────┼─────────┼──────┼───────┼────────┼─────────┼────────┼─────┼───────────┼──────┼──────────┤
+│ webhw    │ 0  │ 0.0.0   │ fork │ 31081 │ online │ 19      │ 0s     │ 0%  │ 10.7 MB   │ root │ disabled │
+└──────────┴────┴─────────┴──────┴───────┴────────┴─────────┴────────┴─────┴───────────┴──────┴──────────┘
+ Use `pm2 show <id|name>` to get more details about an app
+  INFO [4b7d9575] Finished in 0.839 seconds with exit status 0 (successful).
+ DEBUG [9a8dd834] Running /usr/bin/env ls -x /var/www/webhw/releases as root@118.25.152.188
+ DEBUG [9a8dd834] Command: /usr/bin/env ls -x /var/www/webhw/releases
+ DEBUG [085ac42a] 	20190513074125	20190513074639	20190513144532	20190513144927	20190513145832
+20190513152457
+ DEBUG [085ac42a] Finished in 0.533 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 118.25.152.188
+ DEBUG [57093298] Running [ -d /var/www/webhw/current ] as root@118.25.152.188
+ DEBUG [57093298] Command: [ -d /var/www/webhw/current ]
+ DEBUG [2fc2dd77] Finished in 0.388 seconds with exit status 0 (successful).
+ DEBUG [71c73df2] Running /usr/bin/env readlink /var/www/webhw/current as root@118.25.152.188
+ DEBUG [71c73df2] Command: /usr/bin/env readlink /var/www/webhw/current
+ DEBUG [7628af31] 	/var/www/webhw/releases/20190513152457
+ DEBUG [7628af31] Finished in 0.489 seconds with exit status 0 (successful).
+  INFO [c6051194] Running /usr/bin/env rm -rf /var/www/webhw/releases/20190513074125 as root@118.25.152.188
+ DEBUG [c6051194] Command: /usr/bin/env rm -rf /var/www/webhw/releases/20190513074125
+  INFO [4e96e480] Finished in 0.612 seconds with exit status 0 (successful).
+ DEBUG [0b0a7939] Running if test ! -d /var/www/webhw/releases; then echo "Directory does not exist '/var/www/webhw/releases'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [0b0a7939] Command: if test ! -d /var/www/webhw/releases; then echo "Directory does not exist '/var/www/webhw/releases'" 1>&2; false; fi
+ DEBUG [ef15cf40] Finished in 0.384 seconds with exit status 0 (successful).
+  INFO [1ffa7712] Running /usr/bin/env echo "Branch master (at d43b47a4cce8a4a445f92016bf9254b1445cf4a3) deployed as release 20190513152457 by yangminghui" >> /var/www/webhw/revisions.log as root@118.25.152.188
+ DEBUG [1ffa7712] Command: cd /var/www/webhw/releases && /usr/bin/env echo "Branch master (at d43b47a4cce8a4a445f92016bf9254b1445cf4a3) deployed as release 20190513152457 by yangminghui" >> /var/www/webhw/revisions.log
+  INFO [fc0f1583] Finished in 0.382 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-05-13 23:30:28 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [03a0a22b] Running /usr/bin/env mkdir -p /tmp as root@118.25.152.188
+ DEBUG [03a0a22b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1fc80168] Finished in 0.732 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 100.0%
+  INFO [88de8ec9] Running /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh as root@118.25.152.188
+ DEBUG [88de8ec9] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh

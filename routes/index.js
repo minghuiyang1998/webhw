@@ -11,7 +11,7 @@ pool.on('error', (err, client) => {
 })
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/films', function (req, res, next) {
   pool.connect((err, client, done) => {
     if (err) throw err
     client.query('SELECT * FROM films_all', (err, result) => {
