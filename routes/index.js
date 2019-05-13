@@ -27,7 +27,7 @@ router.get('/films', function (req, res, next) {
       } else {
         let films = result.rows.map((item) => {
           Object.keys(item).forEach((key) => {
-            if (item[key] && item[key].match(/^\[.*\]$/sg)) {
+            if (item[key] && item[key].match(/^\[.*\]$/g)) {
               item[key] = JSON.parse(item[key])
             }
           })

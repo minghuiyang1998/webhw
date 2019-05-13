@@ -461,3 +461,206 @@
   INFO [ebf3441f] Running /usr/bin/env echo "Branch master (at 815dfe825b8316779805b82e9fd42031eaa765fd) deployed as release 20190513074639 by yangminghui" >> /var/www/webhw/revisions.log as root@118.25.152.188
  DEBUG [ebf3441f] Command: cd /var/www/webhw/releases && /usr/bin/env echo "Branch master (at 815dfe825b8316779805b82e9fd42031eaa765fd) deployed as release 20190513074639 by yangminghui" >> /var/www/webhw/revisions.log
   INFO [79786d54] Finished in 1.843 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-05-13 22:45:24 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [fcc72cd0] Running /usr/bin/env mkdir -p /tmp as root@118.25.152.188
+ DEBUG [fcc72cd0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8a3976e3] Finished in 0.736 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 100.0%
+  INFO [936c56c1] Running /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh as root@118.25.152.188
+ DEBUG [936c56c1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh
+  INFO [a69cd216] Finished in 0.418 seconds with exit status 0 (successful).
+  INFO [e2ddf7b4] Running /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD as root@118.25.152.188
+ DEBUG [e2ddf7b4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD )
+ DEBUG [e3423cbc] 	e911f1447674b2c3370285e8571b99dbd8f1ed7b	HEAD
+  INFO [e3423cbc] Finished in 4.935 seconds with exit status 0 (successful).
+  INFO [c3a376c4] Running /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases as root@118.25.152.188
+ DEBUG [c3a376c4] Command: /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases
+  INFO [d5c40248] Finished in 0.405 seconds with exit status 0 (successful).
+ DEBUG [aa4c0594] Running [ -f /var/www/webhw/current/REVISION ] as root@118.25.152.188
+ DEBUG [aa4c0594] Command: [ -f /var/www/webhw/current/REVISION ]
+ DEBUG [92ff8b25] Finished in 0.582 seconds with exit status 0 (successful).
+ DEBUG [87345047] Running /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null as root@118.25.152.188
+ DEBUG [87345047] Command: /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null
+ DEBUG [b6e89f03] 	815dfe825b8316779805b82e9fd42031eaa765fd
+ DEBUG [b6e89f03] Finished in 0.431 seconds with exit status 0 (successful).
+ DEBUG [1d7d027b] Running [ -f /var/www/webhw/repo/HEAD ] as root@118.25.152.188
+ DEBUG [1d7d027b] Command: [ -f /var/www/webhw/repo/HEAD ]
+ DEBUG [0ee71db8] Finished in 0.397 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/webhw/repo
+ DEBUG [512a24f3] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [512a24f3] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [4a38e5af] Finished in 0.393 seconds with exit status 0 (successful).
+  INFO [7cabfbad] Running /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git as root@118.25.152.188
+ DEBUG [7cabfbad] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git )
+  INFO [db22a4a6] Finished in 0.467 seconds with exit status 0 (successful).
+  INFO [d80325fd] Running /usr/bin/env git remote update --prune as root@118.25.152.188
+ DEBUG [d80325fd] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [da1a932f] 	正在获取 origin
+ DEBUG [da1a932f] 	来自 github.com:minghuiyang1998/webhw
+   815dfe8..e911f14  master     -> master
+  INFO [da1a932f] Finished in 4.957 seconds with exit status 0 (successful).
+ DEBUG [c8e1044a] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [c8e1044a] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [3c1fadfe] Finished in 0.342 seconds with exit status 0 (successful).
+  INFO [55965c95] Running /usr/bin/env mkdir -p /var/www/webhw/releases/20190513144532 as root@118.25.152.188
+ DEBUG [55965c95] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env mkdir -p /var/www/webhw/releases/20190513144532 )
+  INFO [93a9461d] Finished in 0.402 seconds with exit status 0 (successful).
+  INFO [7fbbd757] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190513144532 as root@118.25.152.188
+ DEBUG [7fbbd757] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190513144532 )
+  INFO [1ca8b4c9] Finished in 0.441 seconds with exit status 0 (successful).
+ DEBUG [04ef953e] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [04ef953e] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [5a5e4e7c] Finished in 0.407 seconds with exit status 0 (successful).
+ DEBUG [0eda1703] Running /usr/bin/env git rev-list --max-count=1 master as root@118.25.152.188
+ DEBUG [0eda1703] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f6140b9e] 	e911f1447674b2c3370285e8571b99dbd8f1ed7b
+ DEBUG [f6140b9e] Finished in 0.461 seconds with exit status 0 (successful).
+ DEBUG [2aecd962] Running if test ! -d /var/www/webhw/releases/20190513144532; then echo "Directory does not exist '/var/www/webhw/releases/20190513144532'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [2aecd962] Command: if test ! -d /var/www/webhw/releases/20190513144532; then echo "Directory does not exist '/var/www/webhw/releases/20190513144532'" 1>&2; false; fi
+ DEBUG [1dc35f86] Finished in 0.501 seconds with exit status 0 (successful).
+  INFO [0925ae07] Running /usr/bin/env echo "e911f1447674b2c3370285e8571b99dbd8f1ed7b" > REVISION as root@118.25.152.188
+ DEBUG [0925ae07] Command: cd /var/www/webhw/releases/20190513144532 && /usr/bin/env echo "e911f1447674b2c3370285e8571b99dbd8f1ed7b" > REVISION
+  INFO [2d01fefd] Finished in 0.409 seconds with exit status 0 (successful).
+ DEBUG [20446655] Running if test ! -d /var/www/webhw/releases/20190513144532; then echo "Directory does not exist '/var/www/webhw/releases/20190513144532'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [20446655] Command: if test ! -d /var/www/webhw/releases/20190513144532; then echo "Directory does not exist '/var/www/webhw/releases/20190513144532'" 1>&2; false; fi
+ DEBUG [af264889] Finished in 0.407 seconds with exit status 0 (successful).
+  INFO [c90696f3] Running /usr/bin/env npm install --production --silent --no-progress as root@118.25.152.188
+ DEBUG [c90696f3] Command: cd /var/www/webhw/releases/20190513144532 && /usr/bin/env npm install --production --silent --no-progress
+ DEBUG [56a805ab] 	added 69 packages in 3.501s
+  INFO [56a805ab] Finished in 5.808 seconds with exit status 0 (successful).
+  INFO [3c805bb5] Running /usr/bin/env ln -s /var/www/webhw/releases/20190513144532 /var/www/webhw/releases/current as root@118.25.152.188
+ DEBUG [3c805bb5] Command: /usr/bin/env ln -s /var/www/webhw/releases/20190513144532 /var/www/webhw/releases/current
+  INFO [68cd08ba] Finished in 0.449 seconds with exit status 0 (successful).
+  INFO [31ebd9ee] Running /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw as root@118.25.152.188
+ DEBUG [31ebd9ee] Command: /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw
+  INFO [3de4f698] Finished in 0.792 seconds with exit status 0 (successful).
+ DEBUG [50a8b518] Running if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [50a8b518] Command: if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi
+ DEBUG [883f905d] Finished in 0.463 seconds with exit status 0 (successful).
+ DEBUG [1627071a] Running /usr/bin/env pm2 jlist  as root@118.25.152.188
+ DEBUG [1627071a] Command: cd /var/www/webhw/current && /usr/bin/env pm2 jlist 
+ DEBUG [cfbab922] 	[PM2] Spawning PM2 daemon with pm2_home=/root/.pm2
+ DEBUG [cfbab922] 	[PM2] PM2 Successfully daemonized
+ DEBUG [cfbab922] 	[]
+ DEBUG [cfbab922] Finished in 8.077 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-05-13 22:49:20 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cf699306] Running /usr/bin/env mkdir -p /tmp as root@118.25.152.188
+ DEBUG [cf699306] Command: /usr/bin/env mkdir -p /tmp
+  INFO [03043c74] Finished in 0.632 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 100.0%
+  INFO [c2758264] Running /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh as root@118.25.152.188
+ DEBUG [c2758264] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh
+  INFO [e8a788f9] Finished in 0.397 seconds with exit status 0 (successful).
+  INFO [87ff0881] Running /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD as root@118.25.152.188
+ DEBUG [87ff0881] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD )
+ DEBUG [9bfeb52f] 	e911f1447674b2c3370285e8571b99dbd8f1ed7b	HEAD
+  INFO [9bfeb52f] Finished in 4.151 seconds with exit status 0 (successful).
+  INFO [ae783c7d] Running /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases as root@118.25.152.188
+ DEBUG [ae783c7d] Command: /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases
+  INFO [f580fbec] Finished in 0.403 seconds with exit status 0 (successful).
+ DEBUG [95147757] Running [ -f /var/www/webhw/current/REVISION ] as root@118.25.152.188
+ DEBUG [95147757] Command: [ -f /var/www/webhw/current/REVISION ]
+ DEBUG [ea194a55] Finished in 0.380 seconds with exit status 0 (successful).
+ DEBUG [c7a49396] Running /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null as root@118.25.152.188
+ DEBUG [c7a49396] Command: /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null
+ DEBUG [377f139a] 	e911f1447674b2c3370285e8571b99dbd8f1ed7b
+ DEBUG [377f139a] Finished in 0.508 seconds with exit status 0 (successful).
+ DEBUG [210375a9] Running [ -f /var/www/webhw/repo/HEAD ] as root@118.25.152.188
+ DEBUG [210375a9] Command: [ -f /var/www/webhw/repo/HEAD ]
+ DEBUG [450eda16] Finished in 0.611 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/webhw/repo
+ DEBUG [aed59dc0] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [aed59dc0] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [593636b1] Finished in 0.432 seconds with exit status 0 (successful).
+  INFO [d65d3cf4] Running /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git as root@118.25.152.188
+ DEBUG [d65d3cf4] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git )
+  INFO [1315f992] Finished in 0.485 seconds with exit status 0 (successful).
+  INFO [3335b579] Running /usr/bin/env git remote update --prune as root@118.25.152.188
+ DEBUG [3335b579] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d53ee75b] 	正在获取 origin
+  INFO [d53ee75b] Finished in 3.895 seconds with exit status 0 (successful).
+ DEBUG [f2c82c0c] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [f2c82c0c] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [56b2ee4b] Finished in 0.347 seconds with exit status 0 (successful).
+  INFO [74a5519e] Running /usr/bin/env mkdir -p /var/www/webhw/releases/20190513144927 as root@118.25.152.188
+ DEBUG [74a5519e] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env mkdir -p /var/www/webhw/releases/20190513144927 )
+  INFO [eeecaf7d] Finished in 0.492 seconds with exit status 0 (successful).
+  INFO [d5dfe0a6] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190513144927 as root@118.25.152.188
+ DEBUG [d5dfe0a6] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190513144927 )
+  INFO [ba2f76fb] Finished in 0.482 seconds with exit status 0 (successful).
+ DEBUG [7cfc77e4] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [7cfc77e4] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [476d9f68] Finished in 0.385 seconds with exit status 0 (successful).
+ DEBUG [51954991] Running /usr/bin/env git rev-list --max-count=1 master as root@118.25.152.188
+ DEBUG [51954991] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [8054c7f6] 	e911f1447674b2c3370285e8571b99dbd8f1ed7b
+ DEBUG [8054c7f6] Finished in 0.434 seconds with exit status 0 (successful).
+ DEBUG [103b471d] Running if test ! -d /var/www/webhw/releases/20190513144927; then echo "Directory does not exist '/var/www/webhw/releases/20190513144927'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [103b471d] Command: if test ! -d /var/www/webhw/releases/20190513144927; then echo "Directory does not exist '/var/www/webhw/releases/20190513144927'" 1>&2; false; fi
+ DEBUG [b363a80d] Finished in 0.511 seconds with exit status 0 (successful).
+  INFO [620bfc71] Running /usr/bin/env echo "e911f1447674b2c3370285e8571b99dbd8f1ed7b" > REVISION as root@118.25.152.188
+ DEBUG [620bfc71] Command: cd /var/www/webhw/releases/20190513144927 && /usr/bin/env echo "e911f1447674b2c3370285e8571b99dbd8f1ed7b" > REVISION
+  INFO [59041786] Finished in 0.404 seconds with exit status 0 (successful).
+ DEBUG [0357f654] Running if test ! -d /var/www/webhw/releases/20190513144927; then echo "Directory does not exist '/var/www/webhw/releases/20190513144927'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [0357f654] Command: if test ! -d /var/www/webhw/releases/20190513144927; then echo "Directory does not exist '/var/www/webhw/releases/20190513144927'" 1>&2; false; fi
+ DEBUG [3d415995] Finished in 0.382 seconds with exit status 0 (successful).
+  INFO [1dfe1ea8] Running /usr/bin/env npm install --production --silent --no-progress as root@118.25.152.188
+ DEBUG [1dfe1ea8] Command: cd /var/www/webhw/releases/20190513144927 && /usr/bin/env npm install --production --silent --no-progress
+ DEBUG [91724fd6] 	added 69 packages in 1.399s
+  INFO [91724fd6] Finished in 2.222 seconds with exit status 0 (successful).
+  INFO [39abeccd] Running /usr/bin/env ln -s /var/www/webhw/releases/20190513144927 /var/www/webhw/releases/current as root@118.25.152.188
+ DEBUG [39abeccd] Command: /usr/bin/env ln -s /var/www/webhw/releases/20190513144927 /var/www/webhw/releases/current
+  INFO [ae41514e] Finished in 0.566 seconds with exit status 0 (successful).
+  INFO [8d0f0a69] Running /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw as root@118.25.152.188
+ DEBUG [8d0f0a69] Command: /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw
+  INFO [ecfcfc2d] Finished in 0.513 seconds with exit status 0 (successful).
+ DEBUG [b466554e] Running if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [b466554e] Command: if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi
+ DEBUG [0e1ae8f0] Finished in 0.377 seconds with exit status 0 (successful).
+ DEBUG [1dbc308e] Running /usr/bin/env pm2 jlist  as root@118.25.152.188
+ DEBUG [1dbc308e] Command: cd /var/www/webhw/current && /usr/bin/env pm2 jlist 
+ DEBUG [46138248] 	[]
+ DEBUG [46138248] Finished in 0.664 seconds with exit status 0 (successful).
+  INFO App is not registerd
+ DEBUG [123ffa7b] Running if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [123ffa7b] Command: if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi
+ DEBUG [495421d9] Finished in 0.402 seconds with exit status 0 (successful).
+  INFO [d353ff26] Running /usr/bin/env pm2 start ecosystem.config.js  as root@118.25.152.188
+ DEBUG [d353ff26] Command: cd /var/www/webhw/current && /usr/bin/env pm2 start ecosystem.config.js 
+ DEBUG [ec973e89] 	[PM2][WARN] Applications webhw not running, starting...
+ DEBUG [ec973e89] 	[PM2] App [webhw] launched (1 instances)
+ DEBUG [ec973e89] 	┌──────────┬────┬─────────┬──────┬───────┬────────┬─────────┬────────┬─────┬───────────┬──────┬──────────┐
+│ App name │ id │ version │ mode │ pid   │ status │ restart │ uptime │ cpu │ mem       │ user │ watching │
+├──────────┼────┼─────────┼──────┼───────┼────────┼─────────┼────────┼─────┼───────────┼──────┼──────────┤
+│ webhw    │ 0  │ 0.0.0   │ fork │ 14062 │ online │ 0       │ 0s     │ 0%  │ 18.3 MB   │ root │ disabled │
+└──────────┴────┴─────────┴──────┴───────┴────────┴─────────┴────────┴─────┴───────────┴──────┴──────────┘
+ Use `pm2 show <id|name>` to get more details about an app
+  INFO [ec973e89] Finished in 1.149 seconds with exit status 0 (successful).
+ DEBUG [f5ef77df] Running /usr/bin/env ls -x /var/www/webhw/releases as root@118.25.152.188
+ DEBUG [f5ef77df] Command: /usr/bin/env ls -x /var/www/webhw/releases
+ DEBUG [459ce271] 	20190513072814	20190513073422	20190513073757	20190513074125	20190513074639
+20190513144532	20190513144927
+ DEBUG [459ce271] Finished in 0.457 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 7 deployed releases on 118.25.152.188
+ DEBUG [ba5362e7] Running [ -d /var/www/webhw/current ] as root@118.25.152.188
+ DEBUG [ba5362e7] Command: [ -d /var/www/webhw/current ]
+ DEBUG [5dd511af] Finished in 0.675 seconds with exit status 0 (successful).
+ DEBUG [b7c721f4] Running /usr/bin/env readlink /var/www/webhw/current as root@118.25.152.188
+ DEBUG [b7c721f4] Command: /usr/bin/env readlink /var/www/webhw/current
+ DEBUG [9daa908a] 	/var/www/webhw/releases/20190513144927
+ DEBUG [9daa908a] Finished in 2.166 seconds with exit status 0 (successful).
+  INFO [11e985fd] Running /usr/bin/env rm -rf /var/www/webhw/releases/20190513072814 /var/www/webhw/releases/20190513073422 as root@118.25.152.188
+ DEBUG [11e985fd] Command: /usr/bin/env rm -rf /var/www/webhw/releases/20190513072814 /var/www/webhw/releases/20190513073422
+  INFO [e8231df8] Finished in 3.103 seconds with exit status 0 (successful).
+ DEBUG [83bb007f] Running if test ! -d /var/www/webhw/releases; then echo "Directory does not exist '/var/www/webhw/releases'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [83bb007f] Command: if test ! -d /var/www/webhw/releases; then echo "Directory does not exist '/var/www/webhw/releases'" 1>&2; false; fi
+ DEBUG [b7f9c53b] Finished in 0.393 seconds with exit status 0 (successful).
+  INFO [cd5237f5] Running /usr/bin/env echo "Branch master (at e911f1447674b2c3370285e8571b99dbd8f1ed7b) deployed as release 20190513144927 by yangminghui" >> /var/www/webhw/revisions.log as root@118.25.152.188
+ DEBUG [cd5237f5] Command: cd /var/www/webhw/releases && /usr/bin/env echo "Branch master (at e911f1447674b2c3370285e8571b99dbd8f1ed7b) deployed as release 20190513144927 by yangminghui" >> /var/www/webhw/revisions.log
+  INFO [d802372c] Finished in 0.428 seconds with exit status 0 (successful).
