@@ -58,13 +58,13 @@ namespace :pm2 do
 
   def restart_app
     within current_path do
-      execute :pm2, :restart, '../ecosystem.config.js', fetch(:app_command)
+      execute :pm2, :restart, 'ecosystem.config.js', fetch(:app_command)
     end
   end
 
   def start_app
     within current_path do
-      execute :pm2, :start, '../ecosystem.config.js', fetch(:app_command)
+      execute :pm2, :start, 'ecosystem.config.js', fetch(:app_command)
     end
   end
 

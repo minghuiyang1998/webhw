@@ -238,3 +238,9 @@
  DEBUG [bd81fe0c] Finished in 4.259 seconds with exit status 0 (successful).
  DEBUG [5ef65949] Running /usr/bin/env git rev-list --max-count=1 master as root@118.25.152.188
  DEBUG [5ef65949] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-05-13 15:39:11 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1ef59d6b] Running /usr/bin/env mkdir -p /tmp as root@118.25.152.188
+ DEBUG [1ef59d6b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6f8b0c17] Finished in 15.078 seconds with exit status 0 (successful).
