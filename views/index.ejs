@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>豆瓣电影排行榜</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <div>
+        <header id="header">
+            <nav class="nav flex align-items-center">
+                <a class="nav-item" href="/">豆瓣</a>
+                <a class="nav-item" href="/">读书</a>
+                <a class="nav-item" href="/">电影</a>
+                <a class="nav-item" href="/">音乐</a>
+                <a class="nav-item" href="/">同城</a>
+                <a class="nav-item" href="/">小组</a>
+                <a class="nav-item" href="/">阅读</a>
+                <a class="nav-item" href="/">FM</a>
+                <a class="nav-item" href="/">时间</a>
+                <a class="nav-item" href="/">豆品</a>
+                <a class="nav-item" href="/">更多</a>
+                <a class="nav-item" href="/">下载豆瓣客户端</a>
+                <a class="nav-item" href="/">登录注册</a>
+            </nav>
+        </header>
+        <div id="app">
+            <div id="banner">
+                <div id="nav-primary" class="flex align-items-center">
+                    <div id="nav-logo" class="mr-4">
+                        <a href="/">豆瓣电影</a>
+                    </div>
+                    <div id="nav-search" class="flex align-items-center">
+                        <input v-model="input" id="search-input" type="text" autocomplete="off"
+                            placeholder="搜索电影，电视剧，综艺，影人">
+                        <button id="search-button" @click="onSearchButtonTap">
+                            <svg t="1555994577347" class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="1107"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48">
+                                <path
+                                    d="M702.537056 608.55508c85.516676-129.373533 71.343885-305.235866-42.583864-419.164638-130.141012-130.141012-341.126284-130.141012-471.26832 0-130.141012 130.141012-130.141012 341.127308 0 471.26832 113.928772 113.927749 289.790082 128.101563 419.163615 42.582841 13.449313 2.808976 27.335578 1.909489 40.410362-2.061962-8.972349 27.489074-3.180436 58.4666 18.276249 79.922261l153.658635 153.671938c30.670533 30.66951 81.020268 30.05655 112.479771-1.403976 31.439036-31.461549 32.05302-81.799004 1.382487-112.49205L780.396331 667.239644c-21.455661-21.456684-52.432163-27.247574-79.922261-18.275225C704.468035 635.888612 705.367521 622.002346 702.537056 608.55508zM255.116887 594.71077c-92.976578-92.977601-92.976578-243.718791 0-336.696392 92.976578-92.998067 243.717767-92.976578 336.672856 0 92.999091 92.977601 92.999091 243.696278 0 336.696392C498.834654 687.688371 348.093465 687.688371 255.116887 594.71077z"
+                                    p-id="1108" fill="#ffffff"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="nav-secondary">
+                    <nav class="flex align-items-center">
+                        <a class="nav-secondary-item" href="/">影讯&购票</a>
+                        <a class="nav-secondary-item" href="/">选电影</a>
+                        <a class="nav-secondary-item" href="/">电视剧</a>
+                        <a class="nav-secondary-item" href="/">排行榜</a>
+                        <a class="nav-secondary-item" href="/">分类</a>
+                        <a class="nav-secondary-item" href="/">影评</a>
+                        <a class="nav-secondary-item" href="/">2018年度榜单</a>
+                        <a class="nav-secondary-item" href="/">2018书影音报告</a>
+                    </nav>
+                </div>
+            </div>
+            <div id="main" hidden>
+                <div>
+                    <h1 class="main-header-1">豆瓣电影排行榜</h1>
+                    <h2 class="main-header-2">豆瓣新片榜 · · · · · ·</h2>
+                    <ul>
+                        <li class="list-item" v-for="film in films.slice(index - 1, index + 9)" :key="film.id">
+                            <div class="poster-wrap">
+                                <img class="poster" :src="film.poster" :alt="film.title">
+                            </div>
+                            <div>
+                                <a class="film-title" href="/">{{film.title}}</a>
+                                <div class="details">{{film.details}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="navcnt">
+                    <span class="index-item" @click="onPrevButtonTap" :disable="index === 1">上一页</span>
+                    <span v-if="show[0] != 1">...</span>
+                    <span :class="{ active : n === index ,  'index-item' : true }" v-for="n in show" :key="n"
+                        @click="onPageClick(n)"> {{n}}</span>
+                    <span v-if="show.slice(-1) != Math.ceil(films.length / 10)">...</span>
+                    <span class="index-item" @click="onNextButtonTap"
+                        :disable="index === Math.ceil(films.length / 10)">下一页</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            films: [],
+            index: 1,
+            raw: [],
+            input: null,
+            show: []
+        },
+        watch: {
+            raw: function (newValue, oldValue) {
+                this.films = this._formatData(newValue)
+                this._formatIndex()
+                $('#main').show()
+            }
+        },
+        methods: {
+            _formatData: function (obj) {
+				console.log("TCL: obj", obj)
+                let temp = obj.map((film) => {
+                    let pubdate = film.pubdate ? film.pubdate.join('/') : ""
+                    let casts = film.casts ? film.casts.map(i => i.name).join('/') : ""
+                    let info = pubdate + '/' + casts
+                    return {
+                        id: film._id || null,
+                        poster: film.poster || null,
+                        title: film.title || null,
+                        details: info.length > 140 ? info.slice(0, 140) + '...' : info,
+                        rating: film.rating || []
+                    }
+                })
+
+                return temp
+            },
+            _formatIndex() {
+                let len = Math.ceil(this.films.length / 10)
+                if (1 <= this.index && this.index <= 3) {
+                    this.show = [1, 2, 3, 4, 5]
+                    window.scrollTo({
+                        top: 0,
+                    })
+                    return
+                }
+
+                if (len - 3 <= this.index && this.index <= len) {
+                    this.show = [len - 4, len - 3, len - 2, len - 1, len]
+                    window.scrollTo({
+                        top: 0,
+                    })
+                    return
+                }
+
+                let end = this.index + 2
+                let s = []
+                for (let i = this.index - 2; i <= end; i++) {
+                    s.push(i)
+                }
+                this.show = s
+                window.scrollTo({
+                    top: 0,
+                })
+            },
+            onPrevButtonTap: function () {
+                if (this.index > 1) {
+                    this.index--
+                    this._formatIndex()
+                }
+                return
+            },
+            onNextButtonTap: function () {
+                let len = Math.ceil(this.films.length / 10)
+                if (this.index != len) {
+                    this.index++
+                    this._formatIndex()
+                }
+                return
+            },
+            onPageClick: function (n) {
+                this.index = n
+                this._formatIndex()
+            },
+            onSearchButtonTap: function () {
+                if (!this.input) return
+                let result = this.raw.filter((film) => {
+                    let str = Object.values(film).join('______').toLowerCase()
+                    return str.search(this.input.toLowerCase()) >= 0
+                })
+                this.films = this._formatData(result)
+            }
+        }
+    })
+
+    $.ajax({
+        url: '/films',
+        type: 'GET',
+    }).done(function (data) {
+        app.raw = data.films
+    })
+
+</script>
+
+</html>
