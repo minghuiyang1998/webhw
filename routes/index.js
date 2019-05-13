@@ -4,19 +4,11 @@ var env = process.env.NODE_ENV || "production";
 const { Pool } = require('pg')
 const pool = new Pool()
 
+// pool使用默认的localhost配置
 pool.on('error', (err, client) => {
   console.error('Unexpected error on idle client', err)
   process.exit(-1)
 })
-
-var config = {
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "yangminghui"
-};
-
-var conString = `postgres://${config.user}:${config.password}@${config.host}/${config.database}`;
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
