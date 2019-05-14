@@ -4,6 +4,8 @@ var env = process.env.NODE_ENV || "production";
 const { Pool } = require('pg')
 const pool = new Pool({
   database: 'webhw',
+  user:'root',
+  password: '123456'
 })
 
 /* GET home page. */
