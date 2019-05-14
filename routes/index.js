@@ -3,7 +3,7 @@ var router = express.Router();
 var env = process.env.NODE_ENV || "production";
 const { Pool } = require('pg')
 const pool = new Pool({
-  database: 'webhw',
+  database: 'postgres',
   user:'root',
   password: 'password'
 })
