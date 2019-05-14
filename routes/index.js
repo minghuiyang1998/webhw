@@ -4,7 +4,7 @@ var env = process.env.NODE_ENV || "production";
 const { Pool } = require('pg')
 const pool = new Pool({
   database: 'postgres',
-  user:'root',
+  user: 'postgres',
   password: 'password'
 })
 
