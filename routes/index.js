@@ -5,7 +5,7 @@ const { Pool } = require('pg')
 const pool = new Pool({
   database: 'webhw',
   user:'root',
-  password: '123456'
+  password: 'password'
 })
 
 /* GET home page. */

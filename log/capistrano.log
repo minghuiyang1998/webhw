@@ -1487,3 +1487,124 @@
  DEBUG [290da85e] Finished in 0.408 seconds with exit status 0 (successful).
   INFO [4da8913f] Running /usr/bin/env npm install --production --silent --no-progress as root@118.25.152.188
  DEBUG [4da8913f] Command: cd /var/www/webhw/releases/20190514013734 && /usr/bin/env npm install --production --silent --no-progress
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-05-14 09:44:08 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0bc3c483] Running /usr/bin/env mkdir -p /tmp as root@118.25.152.188
+ DEBUG [0bc3c483] Command: /usr/bin/env mkdir -p /tmp
+  INFO [554b6b37] Finished in 0.620 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webhw-production-yangminghui.sh 100.0%
+  INFO [337cc064] Running /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh as root@118.25.152.188
+ DEBUG [337cc064] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webhw-production-yangminghui.sh
+  INFO [9c8cde60] Finished in 0.371 seconds with exit status 0 (successful).
+  INFO [e31f4689] Running /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD as root@118.25.152.188
+ DEBUG [e31f4689] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git ls-remote git@github.com:minghuiyang1998/webhw.git HEAD )
+ DEBUG [c91552df] 	7f79948a23852e6c5f7464072df7e1ae134de633	HEAD
+  INFO [c91552df] Finished in 3.857 seconds with exit status 0 (successful).
+  INFO [cbe8baf8] Running /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases as root@118.25.152.188
+ DEBUG [cbe8baf8] Command: /usr/bin/env mkdir -p /var/www/webhw/shared /var/www/webhw/releases
+  INFO [7e3e9776] Finished in 0.431 seconds with exit status 0 (successful).
+ DEBUG [8356b13f] Running [ -f /var/www/webhw/current/REVISION ] as root@118.25.152.188
+ DEBUG [8356b13f] Command: [ -f /var/www/webhw/current/REVISION ]
+ DEBUG [26012ba2] Finished in 0.409 seconds with exit status 0 (successful).
+ DEBUG [27c9c75c] Running /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null as root@118.25.152.188
+ DEBUG [27c9c75c] Command: /usr/bin/env cat /var/www/webhw/current/REVISION 2>/dev/null
+ DEBUG [1579aa7c] 	7cf93075cd397dfb20c14da17f28f97055a59580
+ DEBUG [1579aa7c] Finished in 0.410 seconds with exit status 0 (successful).
+ DEBUG [e2eef568] Running [ -f /var/www/webhw/repo/HEAD ] as root@118.25.152.188
+ DEBUG [e2eef568] Command: [ -f /var/www/webhw/repo/HEAD ]
+ DEBUG [f801bbf2] Finished in 0.419 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/webhw/repo
+ DEBUG [b0bc3269] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [b0bc3269] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [dbead7ec] Finished in 0.402 seconds with exit status 0 (successful).
+  INFO [d52aa407] Running /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git as root@118.25.152.188
+ DEBUG [d52aa407] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote set-url origin git@github.com:minghuiyang1998/webhw.git )
+  INFO [53af0e40] Finished in 0.401 seconds with exit status 0 (successful).
+  INFO [b15a1d61] Running /usr/bin/env git remote update --prune as root@118.25.152.188
+ DEBUG [b15a1d61] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9100aee2] 	正在获取 origin
+ DEBUG [9100aee2] 	来自 github.com:minghuiyang1998/webhw
+   7cf9307..7f79948  master     -> master
+  INFO [9100aee2] Finished in 4.711 seconds with exit status 0 (successful).
+ DEBUG [4c9dd282] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [4c9dd282] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [fba43921] Finished in 0.405 seconds with exit status 0 (successful).
+  INFO [28737f27] Running /usr/bin/env mkdir -p /var/www/webhw/releases/20190514014415 as root@118.25.152.188
+ DEBUG [28737f27] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env mkdir -p /var/www/webhw/releases/20190514014415 )
+  INFO [2faf0181] Finished in 0.408 seconds with exit status 0 (successful).
+  INFO [8729b36e] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190514014415 as root@118.25.152.188
+ DEBUG [8729b36e] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/webhw/releases/20190514014415 )
+  INFO [fdde0cc8] Finished in 0.409 seconds with exit status 0 (successful).
+ DEBUG [1ceb0d27] Running if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [1ceb0d27] Command: if test ! -d /var/www/webhw/repo; then echo "Directory does not exist '/var/www/webhw/repo'" 1>&2; false; fi
+ DEBUG [1ecdd3c6] Finished in 0.407 seconds with exit status 0 (successful).
+ DEBUG [3d977e3f] Running /usr/bin/env git rev-list --max-count=1 master as root@118.25.152.188
+ DEBUG [3d977e3f] Command: cd /var/www/webhw/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webhw-production-yangminghui.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [085e987e] 	7f79948a23852e6c5f7464072df7e1ae134de633
+ DEBUG [085e987e] Finished in 0.410 seconds with exit status 0 (successful).
+ DEBUG [6596a7d5] Running if test ! -d /var/www/webhw/releases/20190514014415; then echo "Directory does not exist '/var/www/webhw/releases/20190514014415'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [6596a7d5] Command: if test ! -d /var/www/webhw/releases/20190514014415; then echo "Directory does not exist '/var/www/webhw/releases/20190514014415'" 1>&2; false; fi
+ DEBUG [6022e8db] Finished in 0.384 seconds with exit status 0 (successful).
+  INFO [b1a12bc6] Running /usr/bin/env echo "7f79948a23852e6c5f7464072df7e1ae134de633" > REVISION as root@118.25.152.188
+ DEBUG [b1a12bc6] Command: cd /var/www/webhw/releases/20190514014415 && /usr/bin/env echo "7f79948a23852e6c5f7464072df7e1ae134de633" > REVISION
+  INFO [5dd02a7a] Finished in 0.377 seconds with exit status 0 (successful).
+ DEBUG [c21bdda2] Running if test ! -d /var/www/webhw/releases/20190514014415; then echo "Directory does not exist '/var/www/webhw/releases/20190514014415'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [c21bdda2] Command: if test ! -d /var/www/webhw/releases/20190514014415; then echo "Directory does not exist '/var/www/webhw/releases/20190514014415'" 1>&2; false; fi
+ DEBUG [2b19ee78] Finished in 0.370 seconds with exit status 0 (successful).
+  INFO [5b01d843] Running /usr/bin/env npm install --production --silent --no-progress as root@118.25.152.188
+ DEBUG [5b01d843] Command: cd /var/www/webhw/releases/20190514014415 && /usr/bin/env npm install --production --silent --no-progress
+ DEBUG [bbd70933] 	added 69 packages in 1.636s
+  INFO [bbd70933] Finished in 2.550 seconds with exit status 0 (successful).
+  INFO [b5be5df0] Running /usr/bin/env ln -s /var/www/webhw/releases/20190514014415 /var/www/webhw/releases/current as root@118.25.152.188
+ DEBUG [b5be5df0] Command: /usr/bin/env ln -s /var/www/webhw/releases/20190514014415 /var/www/webhw/releases/current
+  INFO [991cd817] Finished in 0.510 seconds with exit status 0 (successful).
+  INFO [37a91b85] Running /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw as root@118.25.152.188
+ DEBUG [37a91b85] Command: /usr/bin/env mv /var/www/webhw/releases/current /var/www/webhw
+  INFO [f418bddd] Finished in 0.511 seconds with exit status 0 (successful).
+ DEBUG [346f8003] Running if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [346f8003] Command: if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi
+ DEBUG [3c8233ca] Finished in 0.408 seconds with exit status 0 (successful).
+ DEBUG [292b18d0] Running /usr/bin/env pm2 jlist  as root@118.25.152.188
+ DEBUG [292b18d0] Command: cd /var/www/webhw/current && /usr/bin/env pm2 jlist 
+ DEBUG [4162eaef] 	[{"name":"webhw","pm2_env":{"script":"/var/www/webhw/current/bin/www","prev_restart_delay":0,"exit_code":1,"node_version":"8.1.0","versioning":null,"version":"0.0.0","unstable_restarts":0,"restart_time":57,"pm_id":0,"created_at":1557796806386,"axm_dynamic":{},"axm_options":{},"axm_monitor":{},"axm_actions":[],"pm_uptime":1557796806386,"status":"errored","unique_id":"65243042-f02a-4f77-964c-335e0c1a4f53","webhw":"{}","PM2_HOME":"/root/.pm2","XDG_SESSION_ID":"707","COMP_WORDBREAKS":" \t\n\"'><;|&(:","NVM_CD_FLAGS":"","SHELL":"/bin/bash","HISTSIZE":"3000","SSH_CLIENT":"58.41.205.174 62238 22","OLDPWD":"/root","NVM_DIR":"/root/.nvm","USER":"root","SSH_AUTH_SOCK":"/tmp/ssh-y8rezZClDi/agent.10010","MAIL":"/var/mail/root","PATH":"/root/.nvm/versions/node/v8.1.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin","PWD":"/var/www/webhw/current","LANG":"zh_CN.UTF-8","SHLVL":"1","HOME":"/root","LOGNAME":"root","CVS_RSH":"ssh","SSH_CONNECTION":"58.41.205.174 62238 172.17.0.6 22","LC_CTYPE":"zh_CN.UTF-8","NVM_BIN":"/root/.nvm/versions/node/v8.1.0/bin","LESSOPEN":"||/usr/bin/lesspipe.sh %s","PROMPT_COMMAND":"history -a; ","XDG_RUNTIME_DIR":"/run/user/0","HISTTIMEFORMAT":"%F %T ","_":"/usr/bin/env","PM2_USAGE":"CLI","PM2_JSON_PROCESSING":"true","NODE_APP_INSTANCE":0,"vizion_running":true,"km_link":false,"pm_pid_path":"/root/.pm2/pids/webhw-0.pid","pm_err_log_path":"/root/.pm2/logs/webhw-error.log","pm_out_log_path":"/root/.pm2/logs/webhw-out.log","exec_mode":"fork_mode","instances":1,"exec_interpreter":"node","pm_cwd":"/var/www/webhw/releases/20190513144927","pm_exec_path":"/var/www/webhw/current/bin/www","node_args":[],"name":"webhw","env":{"updateEnv":true,"unique_id":"65243042-f02a-4f77-964c-335e0c1a4f53","webhw":"{}","PM2_HOME":"/root/.pm2","XDG_SESSION_ID":"707","COMP_WORDBREAKS":" \t\n\"'><;|&(:","NVM_CD_FLAGS":"","SHELL":"/bin/bash","HISTSIZE":"3000","SSH_CLIENT":"58.41.205.174 62238 22","OLDPWD":"/root","NVM_DIR":"/root/.nvm","USER":"root","SSH_AUTH_SOCK":"/tmp/ssh-y8rezZClDi/agent.10010","MAIL":"/var/mail/root","PATH":"/root/.nvm/versions/node/v8.1.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin","PWD":"/var/www/webhw/current","LANG":"zh_CN.UTF-8","SHLVL":"1","HOME":"/root","LOGNAME":"root","CVS_RSH":"ssh","SSH_CONNECTION":"58.41.205.174 62238 172.17.0.6 22","LC_CTYPE":"zh_CN.UTF-8","NVM_BIN":"/root/.nvm/versions/node/v8.1.0/bin","LESSOPEN":"||/usr/bin/lesspipe.sh %s","PROMPT_COMMAND":"history -a; ","XDG_RUNTIME_DIR":"/run/user/0","HISTTIMEFORMAT":"%F %T ","_":"/usr/bin/env","PM2_USAGE":"CLI","PM2_JSON_PROCESSING":"true"},"merge_logs":true,"vizion":true,"autorestart":true,"instance_var":"NODE_APP_INSTANCE","pmx":true,"automation":true,"treekill":true,"username":"root","windowsHide":true,"kill_retry_time":100,"updateEnv":true},"pm_id":0,"monit":{"memory":0,"cpu":0}},{"pid":17343,"name":"www","pm2_env":{"kill_retry_time":100,"windowsHide":true,"username":"root","treekill":true,"automation":true,"pmx":true,"instance_var":"NODE_APP_INSTANCE","watch":false,"autorestart":true,"vizion":true,"merge_logs":true,"env":{"PM2_USAGE":"CLI","OLDPWD":"/var/www/webhw","_":"/root/.nvm/versions/node/v8.1.0/bin/pm2","HISTTIMEFORMAT":"%F %T ","NODE_HOME":"/usr/local/node/0.10.24","XDG_RUNTIME_DIR":"/run/user/0","PROMPT_COMMAND":"history -a; printf \"\\033]0;%s@%s:%s\\007\" \"${USER}\" \"${HOSTNAME%%.*}\" \"${PWD/#$HOME/~}\"","LESSOPEN":"||/usr/bin/lesspipe.sh %s","NVM_BIN":"/root/.nvm/versions/node/v8.1.0/bin","LC_CTYPE":"zh_CN.UTF-8","SSH_CONNECTION":"58.41.205.174 65409 172.17.0.6 22","CVS_RSH":"ssh","LOGNAME":"root","HOME":"/root","SHLVL":"1","LANG":"zh_CN.UTF-8","PWD":"/var/www/webhw/current","PATH":"/root/.nvm/versions/node/v8.1.0/bin:/usr/local/node/0.10.24/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin","MAIL":"/var/spool/mail/root","LS_COLORS":"rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:","USER":"root","NVM_DIR":"/root/.nvm","SSH_TTY":"/dev/pts/1","SSH_CLIENT":"58.41.205.174 65409 22","HISTSIZE":"3000","SHELL":"/bin/bash","TERM":"xterm-256color","NVM_CD_FLAGS":"","COMP_WORDBREAKS":" \t\n\"'><;|&(:","HOSTNAME":"VM_0_6_centos","XDG_SESSION_ID":"716","PM2_HOME":"/root/.pm2","www":{},"unique_id":"65e5f9ea-c7fc-4e6d-8c02-b035d8e487b5"},"name":"www","node_args":[],"pm_exec_path":"/var/www/webhw/releases/20190514011949/bin/www","pm_cwd":"/var/www/webhw/releases/20190514011949","exec_interpreter":"node","instances":1,"exec_mode":"fork_mode","pm_out_log_path":"/root/.pm2/logs/www-out.log","pm_err_log_path":"/root/.pm2/logs/www-error.log","pm_pid_path":"/root/.pm2/pids/www-1.pid","km_link":false,"vizion_running":false,"NODE_APP_INSTANCE":0,"PM2_USAGE":"CLI","OLDPWD":"/var/www/webhw","_":"/root/.nvm/versions/node/v8.1.0/bin/pm2","HISTTIMEFORMAT":"%F %T ","NODE_HOME":"/usr/local/node/0.10.24","XDG_RUNTIME_DIR":"/run/user/0","PROMPT_COMMAND":"history -a; printf \"\\033]0;%s@%s:%s\\007\" \"${USER}\" \"${HOSTNAME%%.*}\" \"${PWD/#$HOME/~}\"","LESSOPEN":"||/usr/bin/lesspipe.sh %s","NVM_BIN":"/root/.nvm/versions/node/v8.1.0/bin","LC_CTYPE":"zh_CN.UTF-8","SSH_CONNECTION":"58.41.205.174 65409 172.17.0.6 22","CVS_RSH":"ssh","LOGNAME":"root","HOME":"/root","SHLVL":"1","LANG":"zh_CN.UTF-8","PWD":"/var/www/webhw/current","PATH":"/root/.nvm/versions/node/v8.1.0/bin:/usr/local/node/0.10.24/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin","MAIL":"/var/spool/mail/root","LS_COLORS":"rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:","USER":"root","NVM_DIR":"/root/.nvm","SSH_TTY":"/dev/pts/1","SSH_CLIENT":"58.41.205.174 65409 22","HISTSIZE":"3000","SHELL":"/bin/bash","TERM":"xterm-256color","NVM_CD_FLAGS":"","COMP_WORDBREAKS":" \t\n\"'><;|&(:","HOSTNAME":"VM_0_6_centos","XDG_SESSION_ID":"716","PM2_HOME":"/root/.pm2","unique_id":"65e5f9ea-c7fc-4e6d-8c02-b035d8e487b5","status":"online","pm_uptime":1557797564919,"axm_actions":[],"axm_monitor":{"Heap Size":{"value":"15.00","type":"internal/v8/heap/total","unit":"MiB","historic":true},"Heap Usage":{"value":86.61,"type":"internal/v8/heap/usage","unit":"%","historic":true},"Used Heap Size":{"value":"12.99","type":"internal/v8/heap/used","unit":"MiB","historic":true},"Active requests":{"value":0,"type":"internal/libuv/requests","historic":true},"Active handles":{"value":4,"type":"internal/libuv/handles","historic":true},"Event Loop Latency":{"value":"0.54","type":"internal/libuv/latency/p50","unit":"ms","historic":true},"Event Loop Latency p95":{"value":"1.54","type":"internal/libuv/latency/p95","unit":"ms","historic":true},"HTTP":{"value":0,"type":"internal/http/builtin/reqs","unit":"req/min","historic":true}},"axm_options":{"error":true,"heapdump":false,"feature.profiler.heap_snapshot":false,"feature.profiler.heap_sampling":false,"feature.profiler.cpu_js":false,"latency":true,"catchExceptions":true,"profiling":true,"metrics":{"http":true,"runtime":true,"eventLoop":true,"network":false,"v8":true},"standalone":false,"tracing":{"outbound":false,"enabled":false},"module_conf":{},"apm":{"version":"4.2.0","type":"node"},"module_name":"www","module_version":"3.5.0"},"axm_dynamic":{},"created_at":1557797564919,"pm_id":1,"restart_time":0,"unstable_restarts":0,"version":"0.0.0","versioning":null,"node_version":"8.1.0"},"pm_id":1,"monit":{"memory":34791424,"cpu":0.1}}]
+ DEBUG [4162eaef] Finished in 0.638 seconds with exit status 0 (successful).
+  INFO App has errored
+ DEBUG [0cd387ed] Running if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [0cd387ed] Command: if test ! -d /var/www/webhw/current; then echo "Directory does not exist '/var/www/webhw/current'" 1>&2; false; fi
+ DEBUG [2b466c2d] Finished in 0.480 seconds with exit status 0 (successful).
+  INFO [dc150e86] Running /usr/bin/env pm2 restart ecosystem.config.js  as root@118.25.152.188
+ DEBUG [dc150e86] Command: cd /var/www/webhw/current && /usr/bin/env pm2 restart ecosystem.config.js 
+ DEBUG [65466d28] 	[PM2] Applying action restartProcessId on app [webhw](ids: 0)
+ DEBUG [65466d28] 	[PM2] [webhw](0) ✓
+ DEBUG [65466d28] 	┌──────────┬────┬─────────┬──────┬───────┬─────────┬─────────┬────────┬─────┬───────────┬──────┬──────────┐
+│ App name │ id │ version │ mode │ pid   │ status  │ restart │ uptime │ cpu │ mem       │ user │ watching │
+├──────────┼────┼─────────┼──────┼───────┼─────────┼─────────┼────────┼─────┼───────────┼──────┼──────────┤
+│ webhw    │ 0  │ 0.0.0   │ fork │ N/A   │ errored │ 57      │ 0      │ 0%  │ 0 B       │ root │ disabled │
+│ www      │ 1  │ 0.0.0   │ fork │ 17343 │ online  │ 0       │ 11m    │ 0%  │ 33.7 MB   │ root │ disabled │
+└──────────┴────┴─────────┴──────┴───────┴─────────┴─────────┴────────┴─────┴───────────┴──────┴──────────┘
+ Use `pm2 show <id|name>` to get more details about an app
+  INFO [65466d28] Finished in 0.721 seconds with exit status 0 (successful).
+ DEBUG [b95e8d90] Running /usr/bin/env ls -x /var/www/webhw/releases as root@118.25.152.188
+ DEBUG [b95e8d90] Command: /usr/bin/env ls -x /var/www/webhw/releases
+ DEBUG [216e53c9] 	20190513152457	20190513153109	20190513153700	20190514011333	20190514011949
+20190514013734	20190514014415
+ DEBUG [216e53c9] Finished in 0.389 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 7 deployed releases on 118.25.152.188
+ DEBUG [210a86f0] Running [ -d /var/www/webhw/current ] as root@118.25.152.188
+ DEBUG [210a86f0] Command: [ -d /var/www/webhw/current ]
+ DEBUG [b176cd1b] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [0ef09811] Running /usr/bin/env readlink /var/www/webhw/current as root@118.25.152.188
+ DEBUG [0ef09811] Command: /usr/bin/env readlink /var/www/webhw/current
+ DEBUG [e284858f] 	/var/www/webhw/releases/20190514014415
+ DEBUG [e284858f] Finished in 0.434 seconds with exit status 0 (successful).
+  INFO [58e194f4] Running /usr/bin/env rm -rf /var/www/webhw/releases/20190513152457 /var/www/webhw/releases/20190513153109 as root@118.25.152.188
+ DEBUG [58e194f4] Command: /usr/bin/env rm -rf /var/www/webhw/releases/20190513152457 /var/www/webhw/releases/20190513153109
+  INFO [db9fd7a5] Finished in 0.392 seconds with exit status 0 (successful).
+ DEBUG [1c319cc2] Running if test ! -d /var/www/webhw/releases; then echo "Directory does not exist '/var/www/webhw/releases'" 1>&2; false; fi as root@118.25.152.188
+ DEBUG [1c319cc2] Command: if test ! -d /var/www/webhw/releases; then echo "Directory does not exist '/var/www/webhw/releases'" 1>&2; false; fi
+ DEBUG [befb25ea] Finished in 0.389 seconds with exit status 0 (successful).
+  INFO [ca6b435e] Running /usr/bin/env echo "Branch master (at 7f79948a23852e6c5f7464072df7e1ae134de633) deployed as release 20190514014415 by yangminghui" >> /var/www/webhw/revisions.log as root@118.25.152.188
+ DEBUG [ca6b435e] Command: cd /var/www/webhw/releases && /usr/bin/env echo "Branch master (at 7f79948a23852e6c5f7464072df7e1ae134de633) deployed as release 20190514014415 by yangminghui" >> /var/www/webhw/revisions.log
+  INFO [933a5891] Finished in 0.381 seconds with exit status 0 (successful).
