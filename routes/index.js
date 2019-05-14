@@ -23,7 +23,6 @@ router.get('/films', function (req, res, next) {
       })
       res.send({ films });
     }
-    pool.end()
   })
 });
 
